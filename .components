@@ -1,0 +1,10 @@
+---
+:orm: activerecord
+:test: rspec
+:mock: mocha
+:script: jquery
+:renderer: slim
+:stylesheet: sass
+:namespace: OthlloServer
+:migration_format: number
+:admin_renderer: slim

@@ -1,0 +1,25 @@
+- error = @game.errors.include?(:turn)
+fieldset class='control-group#{error ? ' has-error' : ''}'
+  = f.label :turn, :class => 'control-label'
+  div class='controls'
+    = f.text_field :turn, :class => 'form-control input-large input-with-feedback', :autofocus => true
+    span class='help-inline' = error ? f.error_message_on(:turn, :class => 'text-error') : pat(:example)
+- error = @game.errors.include?(:board)
+fieldset class='control-group#{error ? ' has-error' : ''}'
+  = f.label :board, :class => 'control-label'
+  div class='controls'
+    = f.text_field :board, :class => 'form-control input-large input-with-feedback'
+    span class='help-inline' = error ? f.error_message_on(:board, :class => 'text-error') : pat(:example)
+- error = @game.errors.include?(:hand)
+fieldset class='control-group#{error ? ' has-error' : ''}'
+  = f.label :hand, :class => 'control-label'
+  div class='controls'
+    = f.text_field :hand, :class => 'form-control input-large input-with-feedback'
+    span class='help-inline' = error ? f.error_message_on(:hand, :class => 'text-error') : pat(:example)
+
+div class="form-actions"
+  = f.submit pat(:save), :class => 'btn btn-primary'
+  |&nbsp;
+  = f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  |&nbsp;
+  = link_to pat(:cancel), url(:games, :index), :class => 'btn btn-default'
